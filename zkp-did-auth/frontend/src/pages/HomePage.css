@@ -1,0 +1,192 @@
+/* ── Hero ──────────────────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 3.5rem 0 3rem;
+}
+.hero-badge {
+  display: inline-block;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+}
+.hero-title {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+.hero-accent {
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border: 1px solid transparent;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn-primary {
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  font-weight: 700;
+}
+.btn-primary:hover {
+  background: #33ddff;
+  box-shadow: var(--glow-cyan);
+}
+.btn-secondary {
+  border-color: var(--border-active);
+  color: var(--accent-cyan);
+}
+.btn-secondary:hover {
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* ── Section ─────────────────────────────────────────────────── */
+.section {
+  margin-top: 3.5rem;
+}
+.section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+}
+
+/* ── Flows ───────────────────────────────────────────────────── */
+.flows {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+@media (max-width: 620px) {
+  .flows { grid-template-columns: 1fr; }
+}
+.flow-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+.flow-cyan  { border-color: rgba(0, 212, 255, 0.2); }
+.flow-green { border-color: rgba(0, 255, 136, 0.2); }
+
+.flow-header { margin-bottom: 1rem; }
+.flow-phase {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+.flow-cyan  .flow-phase { color: var(--accent-cyan); }
+.flow-green .flow-phase { color: var(--accent-green); }
+
+.flow-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.flow-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+.step-num {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+.step-label {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Tech Grid ───────────────────────────────────────────────── */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 0.85rem;
+}
+.tech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+  transition: var(--transition);
+}
+.tech-card:hover {
+  border-color: var(--border-active);
+  background: var(--bg-card-hover);
+}
+.tech-tag {
+  font-size: 0.68rem;
+  color: var(--accent-cyan);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+.tech-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+.tech-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ── Insight Box ─────────────────────────────────────────────── */
+.insight-box {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: var(--radius-md);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.insight-icon {
+  color: #a78bfa;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.insight-box strong {
+  color: var(--text-primary);
+}

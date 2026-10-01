@@ -1,0 +1,82 @@
+/* ─────────────────────────────────────────────────────────────
+   Global Styles — ZKP DID Auth
+   Theme: Dark cryptographic / terminal aesthetic
+   Fonts: Syne (display) + Space Mono (code/mono)
+───────────────────────────────────────────────────────────── */
+
+:root {
+  --bg-primary: #060a12;
+  --bg-secondary: #0d1424;
+  --bg-card: #111827;
+  --bg-card-hover: #162033;
+
+  --accent-cyan: #00d4ff;
+  --accent-green: #00ff88;
+  --accent-purple: #7c3aed;
+  --accent-red: #ff4444;
+  --accent-yellow: #fbbf24;
+
+  --text-primary: #f0f4ff;
+  --text-secondary: #8ba0c4;
+  --text-muted: #4a5c7a;
+
+  --border-subtle: rgba(0, 212, 255, 0.12);
+  --border-active: rgba(0, 212, 255, 0.4);
+
+  --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.3);
+  --glow-green: 0 0 20px rgba(0, 255, 136, 0.3);
+
+  --font-display: "Syne", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Subtle grid background */
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 3px; }
+
+/* ── Typography ─────────────────────────────────────────────── */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 800; }
+code, pre, .mono { font-family: var(--font-mono); }
+
+/* ── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 212, 255, 0.25);
+  color: var(--accent-cyan);
+}
+
+/* ── Utility ────────────────────────────────────────────────── */
+.text-cyan   { color: var(--accent-cyan); }
+.text-green  { color: var(--accent-green); }
+.text-muted  { color: var(--text-muted); }
+.mono        { font-family: var(--font-mono); font-size: 0.85em; }

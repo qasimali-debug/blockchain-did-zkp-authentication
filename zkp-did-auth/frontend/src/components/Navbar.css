@@ -1,0 +1,130 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(6, 10, 18, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* Logo */
+.navbar-logo {
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.logo-bracket { color: var(--accent-cyan); opacity: 0.6; }
+.logo-text    { color: var(--accent-cyan); }
+.logo-sub     { color: var(--text-secondary); font-size: 0.8em; }
+
+/* Nav links */
+.navbar-links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+.nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(0, 212, 255, 0.06);
+  border-color: var(--border-subtle);
+}
+.nav-link.active {
+  color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.2);
+}
+
+/* Wallet */
+.wallet-connected {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 255, 136, 0.06);
+}
+.wallet-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 6px var(--accent-green);
+  animation: pulse 2s infinite;
+}
+.wallet-addr {
+  color: var(--accent-green);
+  font-size: 0.82rem;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.btn-connect {
+  background: transparent;
+  border: 1px solid var(--border-active);
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-connect:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: var(--glow-cyan);
+}
+.btn-connect:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 580px) {
+  .navbar-links { display: none; }
+  .logo-sub { display: none; }
+}
+
+/* Danger link style for Revoke */
+.nav-link.nav-danger {
+  color: var(--accent-red);
+  opacity: 0.7;
+}
+.nav-link.nav-danger:hover {
+  background: rgba(255, 68, 68, 0.08);
+  border-color: rgba(255, 68, 68, 0.25);
+  opacity: 1;
+}
+.nav-link.nav-danger.active {
+  color: var(--accent-red);
+  background: rgba(255, 68, 68, 0.1);
+  border-color: rgba(255, 68, 68, 0.3);
+  opacity: 1;
+}

@@ -1,0 +1,26 @@
+# render.yaml — Backend deployment config for Render.com
+# Docs: https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: zkp-did-auth-backend
+    env: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      - key: RPC_URL
+        sync: false        # Set in Render dashboard
+      - key: CONTRACT_ADDRESS
+        sync: false        # Set in Render dashboard
+      - key: PRIVATE_KEY
+        sync: false        # Set in Render dashboard (keep secret!)
+      - key: FRONTEND_URL
+        sync: false        # Set to your Vercel URL
